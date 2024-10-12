@@ -12,7 +12,7 @@ public class Opgave1 {
             return 0;
         }
 
-        // Hvis taller er lige går vi videre
+        // Hvis tallet ikke er ulige går vi videre i rækken
         if (n % 2 == 0) {
             return sumOddSquares(n -1);
         }
