@@ -10,20 +10,20 @@ public class Opgave4 {
     }
 
     private static void checkNumbers(int[] unsortedNumbers) {
-        int[] powers = generatePowersOfTwo();
+        int[] powers = generatePowersOfTwo(); // O(N)
 
         int bestDifference = Integer.MAX_VALUE;
         int[] bestCombination = new int[3];
         int bestPow = 0;
 
-        for (int i = 0; i < unsortedNumbers.length; i++) {
-            for (int j = i + 1; j < unsortedNumbers.length; j++) {
-                for (int k = j + 1; k < unsortedNumbers.length; k++) {
+        for (int i = 0; i < unsortedNumbers.length; i++) { // O(N)
+            for (int j = i + 1; j < unsortedNumbers.length; j++) { // O(N)
+                for (int k = j + 1; k < unsortedNumbers.length; k++) { // O(N)
 
                     int sum = unsortedNumbers[i] + unsortedNumbers[j] + unsortedNumbers[k];
                     int closestPow = powers[0];
 
-                    for (int power : powers) {
+                    for (int power : powers) { // O(N)
                         if (Math.abs(power - sum) <= Math.abs(closestPow - sum)) {
                             closestPow = power;
                         }
@@ -50,4 +50,9 @@ public class Opgave4 {
         }
         return powers;
     }
+
+    /*
+        Grundet de nestede loops vil tidskompleksiteten af algoritmen være O(N^4).
+        Da de nestede loops samlet er O(N^4) ses der bort fra loopet der genererer powers of two, da dette loop kun er O(N).
+     */
 }
