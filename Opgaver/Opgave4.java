@@ -6,18 +6,11 @@ public class Opgave4 {
 
     public static void main(String[] args) {
         int[] unsortedNumbersList = {23,56,22,11,65,89,3,44,87,910,45,35,98};
-
-        HashMap<int[], Integer> num = checkNumbers(unsortedNumbersList);
-
-        for (Map.Entry<int[], Integer> entry : num.entrySet()) {
-            System.out.println(Arrays.toString(entry.getKey()));
-            System.out.println(entry.getValue());
-        }
+        checkNumbers(unsortedNumbersList);
     }
 
-    private static HashMap<int[], Integer> checkNumbers(int[] unsortedNumbers) {
+    private static void checkNumbers(int[] unsortedNumbers) {
         int[] powers = generatePowersOfTwo();
-        HashMap<int[], Integer> closest = new HashMap<>();
 
         int bestDifference = Integer.MAX_VALUE;
         int[] bestCombination = new int[3];
@@ -29,8 +22,6 @@ public class Opgave4 {
 
                     int sum = unsortedNumbers[i] + unsortedNumbers[j] + unsortedNumbers[k];
                     int closestPow = powers[0];
-
-
 
                     for (int power : powers) {
                         if (Math.abs(power - sum) <= Math.abs(closestPow - sum)) {
@@ -49,8 +40,7 @@ public class Opgave4 {
                 }
             }
         }
-        closest.put(new int[]{bestCombination[0],bestCombination[1],bestCombination[2]}, bestPow);
-        return closest;
+        System.out.println("Combination: " + Arrays.toString(bestCombination) + "\n" + "Closest power of 2: " + bestPow);
     }
 
     private static int[] generatePowersOfTwo() {
