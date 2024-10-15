@@ -5,6 +5,14 @@ public class Opgave3 {
     public static void main(String[] args) {
         System.out.println(additive("82842605"));
     }
+    /*
+        Skriv en rekursiv algoritme med følgende signatur:
+                    bool additive(String s)
+
+        Parameteren indeholder en streng bestående af cifre, fx. “82842605”.
+        Algoritmen returnerer true, hvis parameteren indeholder en substring af tre på hinanden efterfølgende tal,
+        hvor det tredje ciffer er lig med summen af de to forrige
+     */
 
     public static boolean additive(String s) {
         char[] chars = s.toCharArray();

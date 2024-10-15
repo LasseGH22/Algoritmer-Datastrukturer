@@ -9,6 +9,16 @@ public class Opgave4 {
         checkNumbers(unsortedNumbersList);
     }
 
+    /*
+        Skriv en algoritme, der har et array af usorterede, entydige naturlige tal som input og find de tre tal i
+    arrayet, hvis sum er tættest på en potens af 2. Det samme tal kan må bruges én gang.
+    Algoritmens returværdi skal være et heltalsarray, som først indeholder de tre tal og dernæst den tilhørende
+    potens af to (fx 512).
+    Kaldt med arrayet {23,56,22,11,65,89,3,44,87,910,45,35,98}, returneres de tre tal 89, 3, 35 og potensen af 2: 128.
+
+    Hvad er Store-O tidskompleksiteten af din algoritme? Begrund dit svar og diskuter mulighederne for at optimere din løsning yderligere.
+     */
+
     private static void checkNumbers(int[] unsortedNumbers) {
         int[] powers = generatePowersOfTwo(); // O(N)
 
@@ -54,5 +64,8 @@ public class Opgave4 {
     /*
         Grundet de nestede loops vil tidskompleksiteten af algoritmen være O(N^4).
         Da de nestede loops samlet er O(N^4) ses der bort fra loopet der genererer powers of two, da dette loop kun er O(N).
+
+        For at kunne optimere tidskompleksiteten ville det være oplagt at finde et workaround til mængden af nestede for-loops
+        At fjerne 1 for-loop ville allerede gøre en stor forskel i mængden af tid det tager at køre algoritmen igennem
      */
 }
