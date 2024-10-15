@@ -14,7 +14,7 @@ public class Opgave3 {
         hvor det tredje ciffer er lig med summen af de to forrige
      */
 
-    public static boolean additive(String s) {
+    private static boolean additive(String s) {
         char[] chars = s.toCharArray();
 
         if (chars.length < 3) {
