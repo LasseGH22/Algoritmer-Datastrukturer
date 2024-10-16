@@ -29,6 +29,6 @@ public class Opgave11 {
     private static int findIndividualVotes(int[] votes) {
         Arrays.sort(votes);
 
-        
+        return 1;
     }
 }
