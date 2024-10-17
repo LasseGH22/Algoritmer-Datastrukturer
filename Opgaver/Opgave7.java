@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class Opgave7 {
     public static void main(String[] args) {
-        int[] bestCombination = checkBestCombination(6561);
+        int[] bestCombination = checkBestCombination(1);
 
         System.out.println(bestCombination[0] + "^" + bestCombination[1]);
     }
@@ -32,7 +32,7 @@ public class Opgave7 {
         int bestY = 0;
         double isThisN;
 
-        if (n < 100000) {
+        if (n < 100000 && n > 27) {
             for (int x = 3; x <= Math.sqrt(n); x++) {
                 int y = 3;
 
@@ -48,7 +48,7 @@ public class Opgave7 {
                     isThisN = Math.pow(x,y);
                 }
             }
-            if (bestX < 2) return new int[]{0,0};
+            if (bestX < 3) return new int[]{0,0};
         }
         return new int[]{bestX,bestY};
     }
