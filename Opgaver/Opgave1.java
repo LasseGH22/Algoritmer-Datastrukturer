@@ -12,7 +12,7 @@ public class Opgave1 {
         }
 
         if (n % 2 == 0) {
-            return sumOddSquares(n -1);
+            return sumOddSquares(n - 1);
         }
 
         return n * n + sumOddSquares(n - 2);

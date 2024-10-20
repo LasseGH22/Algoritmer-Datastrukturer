@@ -52,9 +52,4 @@ public class Opgave2 {
             y++;
         return x+y;
     }
-
-    /*
-        Tidskompleksiteten af algoritmen er O(N^2). Det er den da det nederste loops tidskompleksitet er dominerende.
-        Da O(N^2) gror hurtigere end O(log^2(N) * N * sqrt(N)) gør det O(log^2(N) * N * sqrt(N)) overflødig.
-     */
 }

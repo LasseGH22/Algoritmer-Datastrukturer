@@ -18,12 +18,10 @@ public class Opgave3 {
         char[] chars = s.toCharArray();
 
         if (chars.length < 3) {
-            System.out.println("For kort");
             return false;
         }
 
         if (Character.getNumericValue(chars[0]) + Character.getNumericValue(chars[1]) == Character.getNumericValue(chars[2])) {
-            System.out.println(chars[0] + " + " + chars[1] + " = " + chars[2]);
             return true;
         }
 
@@ -32,7 +30,6 @@ public class Opgave3 {
             returnString += chars[i];
         }
 
-        System.out.println("String returned: " + returnString);
         return additive(returnString);
     }
 }

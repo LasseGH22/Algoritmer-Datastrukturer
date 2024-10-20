@@ -2,12 +2,13 @@ package Opgaver;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Opgave11 {
     public static void main(String[] args) {
         int[] votes = new int[]{7,4,3,5,3,1,6,4,5,1,7,5};
-
-        findIndividualVotes(votes);
+        System.out.println(findIndividualVotes(votes));
     }
 
     /*
@@ -27,8 +28,26 @@ public class Opgave11 {
      */
 
     private static int findIndividualVotes(int[] votes) {
-        Arrays.sort(votes);
+        HashMap<Integer,Integer> voteCount = new HashMap<>();
 
-        return 1;
+        // O(N)
+        for (int vote : votes) {
+            if (voteCount.containsKey(vote)) {
+                voteCount.put(vote, voteCount.get(vote) + 1);
+            } else {
+                voteCount.put(vote, 1);
+            }
+        }
+
+        // O(N)
+        for (Map.Entry<Integer,Integer> entry : voteCount.entrySet()) {
+            if (entry.getValue() > votes.length / 2) {
+                return entry.getKey();
+            }
+        }
+
+        return -1;
     }
+
+    // Algoritmens tidskompleksitet er O(N)
 }
